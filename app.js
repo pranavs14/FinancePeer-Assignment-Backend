@@ -3,12 +3,14 @@ const { open } = require("sqlite");
 const sqlite3 = require("sqlite3");
 const path = require("path");
 const bcrypt = require("bcrypt");
+const cors = require("cors");
 
 const databasePath = path.join(__dirname, "userData.db");
 
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 let database = null;
 
